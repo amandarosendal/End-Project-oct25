@@ -1,0 +1,262 @@
+:root {
+    --pink: #ffd6e7;
+    --pink-cta: #ffb6c1;
+    --pink-cta-hover: #ff9ab0;
+    --bg: #fff7f9;
+    --text: #222;
+    --muted: #666;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    min-height: 46vh;
+    display: grid;
+    place-items: center;
+    background:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+            url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop")
+            center/cover no-repeat;
+}
+
+.topnav {
+    position: absolute;
+    inset: 0 0 auto 0;
+    padding: 14px 18px;
+    text-align: left;
+}
+
+.brand {
+    background: #0008;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-inner {
+    max-width: 980px;
+    padding: 24px;
+}
+
+.hero-title {
+    margin: 0 0 0.4rem 0;
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-sub {
+    margin: 0 0 1rem 0;
+    opacity: 0.95;
+}
+
+.searchbar {
+    margin-inline: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 8px;
+    border-radius: 9999px;
+    width: min(720px, 92vw);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+}
+
+.searchbar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.8rem 1rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    color: #222;
+}
+
+.searchbar button {
+    border: none;
+    border-radius: 9999px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    background: var(--pink-cta);
+    font-size: 1rem;
+}
+
+.searchbar button:hover {
+    background: var(--pink-cta-hover);
+}
+
+.chips {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.chip {
+    background: #ffffffd9;
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 9999px;
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.chip.active {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* ---------- Content ---------- */
+main {
+    padding: 18px;
+}
+
+#status {
+    color: var(--muted);
+    min-height: 1.25rem;
+    margin: 0.25rem 0 0.75rem 0;
+}
+
+/* Kort-grid */
+.grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    transition: transform 0.06s ease, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    margin: 0.6rem 0.8rem 0;
+    font-size: 1rem;
+}
+
+.card p {
+    margin: 0.2rem 0.8rem 1rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Detaljvy */
+.hidden {
+    display: none;
+}
+
+#mealDetails {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 18px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+#mealDetails img {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px auto 16px;
+    display: block;
+}
+
+.meta {
+    color: #555;
+    margin: 0.2rem 0 0.8rem;
+}
+
+.instructions {
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.backBtn {
+    margin-top: 14px;
+    background: var(--pink-cta);
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    cursor: pointer;
+}
+
+.backBtn:hover {
+    background: var(--pink-cta-hover);
+}
+
+/* ---------- FOOTER + scroll-top ---------- */
+.footbar {
+    background: var(--pink);
+    text-align: center;
+    padding: 16px;
+    color: #222;
+    border-top: 1px solid #eee;
+}
+
+.bottom-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 30px;
+}
+
+.scroll-top-btn {
+    background: var(--pink-cta);
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 9999px;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-top-btn:hover {
+    background: var(--pink-cta-hover);
+    transform: translateY(-2px);
+}

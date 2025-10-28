@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RECEPT & MAT</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<!-- HERO -->
+<header class="hero">
 
+    <div class="hero-inner">
+        <h1 class="hero-title">RECEPT & MAT</h1>
+        <p class="hero-sub">Här finns goda recept – laga, ät, njut!</p>
+
+        <div class="searchbar">
+            <input id="searchInput" type="text" placeholder="Sök efter maträtter här (t.ex. pasta, kyckling, sallad)" aria-label="Sök recept" />
+            <button id="searchBtn" type="button" aria-label="Sök">🔍</button>
+        </div>
+
+        <nav id="quickFilters" class="chips" aria-label="Snabbfilter">
+            <button data-filter="all" class="chip active">Alla recept</button>
+            <button data-filter="kyckling" class="chip">Kyckling</button>
+            <button data-filter="sallad" class="chip">Sallad</button>
+            <button data-filter="vegetarisk" class="chip">Vegetariskt</button>
+            <button data-filter="glutenfritt" class="chip">Glutenfritt</button>
+            <button data-filter="laktosfritt" class="chip">Laktosfritt</button>
+            <button data-filter="dessert" class="chip">Dessert</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section id="status" role="status" aria-live="polite"></section>
+    <section id="mealsContainer" class="grid"></section>
+    <section id="mealDetails" class="hidden"></section>
+</main>
+
+<!-- Tillbaka längst upp -->
+<div class="bottom-btn-container">
+    <button id="scrollTopBtn" class="scroll-top-btn">Gå tillbaka till toppen</button>
+</div>
+
+<footer class="footbar">
+    <small>By Amanda Rosendal Alamo</small>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
