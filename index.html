@@ -1,3 +1,4 @@
+<!-- Denna koden är språk, mobil viewport, titel och min CSS. -->
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- HERO -->
+<!-- Titel, sökfält, input och knapp-id. Klasser för styling; ARIA för sök. -->
 <header class="hero">
 
     <div class="hero-inner">
@@ -18,7 +19,7 @@
             <input id="searchInput" type="text" placeholder="Sök efter maträtter här (t.ex. pasta, kyckling, sallad)" aria-label="Sök recept" />
             <button id="searchBtn" type="button" aria-label="Sök">🔍</button>
         </div>
-
+        <!-- Knappar för olika kategorier. ARIA-labels används för tillgänglighet -->
         <nav id="quickFilters" class="chips" aria-label="Snabbfilter">
             <button data-filter="all" class="chip active">Alla recept</button>
             <button data-filter="kyckling" class="chip">Kyckling</button>
@@ -31,13 +32,23 @@
     </div>
 </header>
 
+<!--
+Detta är själva main-innehållet.
+status: Live-område för meddelanden. role= "status" aria-live="polite".
+mealsContainer: Grid-lista för recepten.
+mealDetails: Detaljruta för ett valt recept (gömd först med .hidden, visas sen via JS).
+-->
 <main>
     <section id="status" role="status" aria-live="polite"></section>
     <section id="mealsContainer" class="grid"></section>
     <section id="mealDetails" class="hidden"></section>
 </main>
 
-<!-- Tillbaka längst upp -->
+<!--
+I botten finns en "Till toppen"-knapp (id="scrollTopBtn").
+En enkel footer med mitt namn.
+script src="app.js" laddas här i slutet, så koden körs efter att HTML finns i DOM.
+-->
 <div class="bottom-btn-container">
     <button id="scrollTopBtn" class="scroll-top-btn">Gå tillbaka till toppen</button>
 </div>

@@ -12,4 +12,4 @@ Källa
 Data: [TheMealDB](https://www.themealdb.com/)
 
 
-By Amanda Rosendal – DAN25S
+Gjord av Amanda Rosendal Alamo

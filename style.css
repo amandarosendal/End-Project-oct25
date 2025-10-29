@@ -1,3 +1,7 @@
+/* Tema & layouten har vi här.
+Här har jag mitt rosa tema med färger för knappar, hover, bakgrund, text osv.
+Box-sizing gäller överallt så layouten blir smidigare.
+Html/body har 100% höjd för att sidan ska kunna ta hela skärmen. */
 :root {
     --pink: #ffd6e7;
     --pink-cta: #ffb6c1;
@@ -16,6 +20,9 @@ body {
     height: 100%;
 }
 
+/* Denna kod Nollställer marginaler.
+Drar in mina färger och sätter line-height för att det ska se luftigt ut. */
+
 body {
     margin: 0;
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -24,7 +31,8 @@ body {
     line-height: 1.5;
 }
 
-/* ---------- HERO ---------- */
+/*Hero-bilden får ett mörkt filter så texten poppar, allt centras i mitten.
+Topnav ligger fast högst upp med lite padding åt vänster. */
 .hero {
     position: relative;
     color: #fff;
@@ -45,6 +53,8 @@ body {
     text-align: left;
 }
 
+/* Brand-taggen: Har lite mörk bakgrund, tight padding, rundade hörn,
+   fet stil och lite letter-spaceing för logokänslan. */
 .brand {
     background: #0008;
     padding: 6px 10px;
@@ -53,11 +63,14 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Inuti hero: Håller allt centrerat och lagom brett, med lite luft runtom. */
 .hero-inner {
     max-width: 980px;
     padding: 24px;
 }
 
+/* Hero-titeln: Finns ingen extra marginal upptill, har en superfet text i caps,
+   lite mellanrum mellan bokstäverna och storlek med clamp. */
 .hero-title {
     margin: 0 0 0.4rem 0;
     font-weight: 900;
@@ -65,12 +78,14 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-
+/* Hero-underrubrik: Lite luft under, mjukare look. */
 .hero-sub {
     margin: 0 0 1rem 0;
     opacity: 0.95;
 }
-
+/* Sökfältet: Centreras med flex, har gap mellan input + knapp.
+   Rund form, vit bakgrund, skugga och padding.
+   Maxbredd 720px eller 92vw beroende på skärmstorleken. */
 .searchbar {
     margin-inline: auto;
     display: flex;
@@ -84,6 +99,8 @@ body {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
 }
 
+/* Sökfältet är detta!
+Knappen: Input fyller raden. Knappen är rosa och rund och klickvänlig. */
 .searchbar input {
     flex: 1;
     border: none;
@@ -102,11 +119,12 @@ body {
     background: var(--pink-cta);
     font-size: 1rem;
 }
-
+/* Denna gör knappen lite mörkare rosa när man hovrar. */
 .searchbar button:hover {
     background: var(--pink-cta-hover);
 }
 
+/* Snabbfilter: Det är flex-rad som har mellanrum, centrerad, radbryts vid behov och luft upptill. */
 .chips {
     display: flex;
     gap: 0.5rem;
@@ -115,6 +133,7 @@ body {
     margin-top: 12px;
 }
 
+/* Enskild rundad knapp med ljus bakgrund, tunn border, fet text och pekare vid hover */
 .chip {
     background: #ffffffd9;
     color: #111;
@@ -124,14 +143,16 @@ body {
     cursor: pointer;
     font-weight: 600;
 }
-
+/* Denna aktiva chip får svart bakgrund och vit text så man ser vilket filter som är valt. */
 .chip.active {
     background: #111;
     color: #fff;
     border-color: #111;
 }
 
-/* ---------- Content ---------- */
+/* Main och status:
+Ger lite padding runt hela innehållet. Status-texten har dämpad färg.
+minsta höjd för bra layout och  även lite luft runt. */
 main {
     padding: 18px;
 }
@@ -142,13 +163,15 @@ main {
     margin: 0.25rem 0 0.75rem 0;
 }
 
-/* Kort-grid */
+/* Grid:
+Visar recepten i ett rutnät med mellanrum och auto-layout som anpassar sig. */
 .grid {
     display: grid;
     gap: 14px;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
+/* Receptruta: Är en vit ruta med rundade hörn, tunn kant, klickbar och får lite rörelse när man trycker. */
 .card {
     background: #fff;
     border: 1px solid #eee;
@@ -159,35 +182,40 @@ main {
     grid-template-rows: auto auto 1fr;
     transition: transform 0.06s ease, box-shadow 0.2s;
 }
-
+/* När man pekar på en receptruta: lyfter det lite och får en mjuk skugga. */
 .card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
 }
-
+/* Bilden i receptrutan:
+Fyller hela bredden, håller 4:3-formatet och beskärs så den alltid ser bra ut. */
 .card img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
 }
-
+/* Rubriken i receptrutan:
+Har lite luft runt och en lagom textstorlek. */
 .card h3 {
     margin: 0.6rem 0.8rem 0;
     font-size: 1rem;
 }
-
+/* Texten i receptrutan:
+Är lite mindre text, grå färg och bra med luft runt. */
 .card p {
     margin: 0.2rem 0.8rem 1rem;
     color: #555;
     font-size: 0.9rem;
 }
 
-/* Detaljvy */
+/* Gömmer elementet helt från sidan tills det ska visas med JS. */
 .hidden {
     display: none;
 }
 
+/* Detaljrutan för receptet:
+Det är vit bakgrund, rundade hörn, lite padding och centrerad maxbredd*/
 #mealDetails {
     background: #fff;
     border: 1px solid #eee;
@@ -197,6 +225,8 @@ main {
     margin: 0 auto;
 }
 
+/* Bilden i detaljrutan:
+Centrerad, rundade hörn. Maxbredd är på 420px så den inte blir för stor. */
 #mealDetails img {
     max-width: 420px;
     width: 100%;
@@ -204,17 +234,21 @@ main {
     margin: 10px auto 16px;
     display: block;
 }
-
+/* Metatexten under receptet:
+Det är grå färg och lite luft ovan och under.*/
 .meta {
     color: #555;
     margin: 0.2rem 0 0.8rem;
 }
 
+/* Behåller radbrytningar och är vänsterställda för att läsas lättare. */
 .instructions {
     white-space: pre-wrap;
     text-align: left;
 }
 
+/* Tillbaka-knappen:
+Rosa bakgrund, rundade hörn, ingen kant och bra padding. Klickvänlig */
 .backBtn {
     margin-top: 14px;
     background: var(--pink-cta);
@@ -224,11 +258,13 @@ main {
     cursor: pointer;
 }
 
+/* När man pekar på knappen så blir färgen lite mörkare rosa. */
 .backBtn:hover {
     background: var(--pink-cta-hover);
 }
 
-/* ---------- FOOTER + scroll-top ---------- */
+/* Footern:
+Ljusrosa bakgrund, centrerad text, padding och en tunn linje upptill */
 .footbar {
     background: var(--pink);
     text-align: center;
@@ -237,12 +273,17 @@ main {
     border-top: 1px solid #eee;
 }
 
+/* Behållaren för "Till toppen"-knappen:
+Den centrerar knappen och ger luft ovanför och undertill. */
 .bottom-btn-container {
     display: flex;
     justify-content: center;
     margin: 60px 0 30px;
 }
 
+/* "Till toppen"-knappen:
+Den är rund, rosa, tydlig text och skugga.
+Blir som små animationer när man trycker eller färgen ändras*/
 .scroll-top-btn {
     background: var(--pink-cta);
     color: #111;
@@ -256,6 +297,8 @@ main {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* När man pekar på knappen:
+Färgen blir då mörkare rosa och den lyfts lite uppåt*/
 .scroll-top-btn:hover {
     background: var(--pink-cta-hover);
     transform: translateY(-2px);
