@@ -144,7 +144,7 @@ När alla receptrutor är klara lägger jag in hela fragmentet i min grid, els.m
 /* Den här funktionen visar detaljsidan för ett recept när man klickar på en receptruta.
 Ja gömmer listan med alla recept,meals, och visar istället detaljrutan, details.
 Sen fyller jag detaljrutan med information om det receptet jag klickade på:
-Rubriken, bild, kategori, ingridienserna, instuktionen, och tillbaka knappen.
+Rubriken, bild, kategori, ingridienserna, instruktionen, och tillbaka knappen.
 Så när man klickar på tillbaka knappen så göms detaljrutan, listan med alla recept visas då igen
 och sidan scrollas upp till toppen av recepten. */
     const showDetails = (m) => {
@@ -177,7 +177,7 @@ och sidan scrollas upp till toppen av recepten. */
     Jag använder den när jag hämtar många recept så det inte blir för många anrop på en gång.
     fetchJSON används för att hämta data från API:t jag valt.
     Jag lägger då ihop min URL med det jag skickar in och hämtar datan med await fetch.
-    Om svaret inte är okej såblir de ett felmeddelande.
+    Om svaret inte är okej så blir de ett felmeddelande.
     Annars returnerar jag svaret som ett vanligt JS-objekt */
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     async function fetchJSON(endpoint) {
@@ -279,7 +279,7 @@ och visar resultatet med renderCards(CURRENT_VIEW). */
     kyckling visar recept där namnet är "chicken" eller "kyckling".
     sallad visar recept med "salad" eller "sallad" i namnet.
     vegetarisk visar recept som har kategorin "vegetarian"
-    alt de som inte innehåller ord som kött, fisk, bacon osv.
+    allt de som inte innehåller ord som kött, fisk, bacon osv.
     dessert visar allt som är kategorin dessert eller har ord som cake,cookie,sweet i namnet.
     glutenfritt, där hämtar jag alla ingredienser via "extractIngredients",
     samt kollar att inga ord som flour,bread, pasta osv (som är gluten) finns.
